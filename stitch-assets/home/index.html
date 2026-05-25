@@ -1,0 +1,304 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Kavya R — Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&amp;family=JetBrains+Mono:wght@400&amp;family=Playfair+Display:ital,wght@0,700;0,900;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#584325",
+                    "on-background": "#e5e2db",
+                    "on-tertiary-fixed": "#00210f",
+                    "on-tertiary-container": "#19492e",
+                    "surface-container-low": "#1c1c18",
+                    "secondary-container": "#4c4177",
+                    "inverse-on-surface": "#31312c",
+                    "bg-deep": "#0A0A0F",
+                    "tertiary": "#a1d4af",
+                    "primary-fixed": "#fddeb5",
+                    "inverse-primary": "#715b3a",
+                    "outline": "#998f84",
+                    "surface-tint": "#e0c29a",
+                    "on-secondary-container": "#bdb0ee",
+                    "on-secondary-fixed-variant": "#4a3f74",
+                    "on-primary-container": "#513d1f",
+                    "secondary-fixed-dim": "#ccbefd",
+                    "on-primary": "#3f2d11",
+                    "surface-container-highest": "#353530",
+                    "on-tertiary": "#04381f",
+                    "primary-fixed-dim": "#e0c29a",
+                    "error": "#ffb4ab",
+                    "surface-container-high": "#2a2a26",
+                    "secondary-fixed": "#e7deff",
+                    "background": "#131410",
+                    "bg-secondary": "#111118",
+                    "on-surface-variant": "#d0c5b8",
+                    "on-surface": "#e5e2db",
+                    "text-muted": "#8A8799",
+                    "secondary": "#ccbefd",
+                    "on-error": "#690005",
+                    "tertiary-container": "#86b895",
+                    "bg-surface": "#1A1A24",
+                    "tertiary-fixed": "#bbefc9",
+                    "inverse-surface": "#e5e2db",
+                    "tertiary-fixed-dim": "#9fd2ae",
+                    "surface-container-lowest": "#0e0e0b",
+                    "on-primary-fixed": "#281901",
+                    "primary-container": "#c4a882",
+                    "primary": "#e1c39b",
+                    "error-container": "#93000a",
+                    "outline-variant": "#4d463c",
+                    "border-subtle": "#252530",
+                    "on-tertiary-fixed-variant": "#205034",
+                    "surface-container": "#20201c",
+                    "surface-dim": "#131410",
+                    "surface-variant": "#353530",
+                    "surface": "#131410",
+                    "on-secondary-fixed": "#1e1146",
+                    "on-secondary": "#33285c",
+                    "surface-bright": "#3a3935",
+                    "on-error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "card-padding": "32px",
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "section-gap": "120px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "label-mono": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "display-hero": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "label-mono": ["13px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-hero": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "300"}],
+                    "body-md": ["16px", {"lineHeight": "1.7", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #0A0A0F; color: #e5e2db; overflow-x: hidden; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .star-field { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+        .star { position: absolute; background: white; border-radius: 50%; opacity: 0.3; animation: twinkle var(--duration) infinite ease-in-out; }
+        @keyframes twinkle { 0%, 100% { opacity: 0.1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.2); } }
+        .hero-glow { position: absolute; top: 50%; right: 10%; width: 40vw; height: 40vw; background: radial-gradient(circle, rgba(196, 168, 130, 0.1) 0%, transparent 70%); filter: blur(60px); pointer-events: none; z-index: 1; }
+        .nav-blur { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .transition-soft { transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
+    </style>
+</head>
+<body class="antialiased font-body-md text-body-md">
+<!-- Star Particle Background -->
+<div class="star-field" id="star-container"><div class="star" style="left: 22.4931%; top: 0.359004%; width: 2.0876px; height: 2.0876px; --duration: 2.180661620291744s; animation-delay: 4.29426s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 19.3042%; top: 15.8716%; width: 2.7986px; height: 2.7986px; --duration: 2.2884598630380846s; animation-delay: 0.0559533s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 2.28656%; top: 38.9164%; width: 1.2524px; height: 1.2524px; --duration: 2.779602549082459s; animation-delay: 0.980075s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 58.2671%; top: 92.047%; width: 2.6395px; height: 2.6395px; --duration: 4.3025612569468805s; animation-delay: 2.72483s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 67.595%; top: 39.6626%; width: 2.8328px; height: 2.8328px; --duration: 4.88391231906653s; animation-delay: 1.41261s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 69.8382%; top: 88.1455%; width: 2.45673px; height: 2.45673px; --duration: 2.3843501023881375s; animation-delay: 1.78398s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 93.4584%; top: 27.4918%; width: 1.09338px; height: 1.09338px; --duration: 3.370180123552856s; animation-delay: 1.7599s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 76.92%; top: 59.3019%; width: 1.29005px; height: 1.29005px; --duration: 2.9545622301793877s; animation-delay: 3.73009s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 83.6638%; top: 38.1052%; width: 1.39673px; height: 1.39673px; --duration: 3.6080502533463017s; animation-delay: 1.01079s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 31.2776%; top: 94.8275%; width: 2.84739px; height: 2.84739px; --duration: 4.01753371928749s; animation-delay: 3.8395s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 90.3102%; top: 14.9214%; width: 1.58284px; height: 1.58284px; --duration: 2.208458988816788s; animation-delay: 4.76192s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 26.2634%; top: 56.0129%; width: 2.98109px; height: 2.98109px; --duration: 3.6549533172138213s; animation-delay: 2.11864s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 83.3932%; top: 30.6669%; width: 1.06883px; height: 1.06883px; --duration: 3.455036074992808s; animation-delay: 4.60503s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 27.4447%; top: 6.85756%; width: 2.9079px; height: 2.9079px; --duration: 2.762650949577569s; animation-delay: 4.04946s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 77.4551%; top: 96.912%; width: 1.01305px; height: 1.01305px; --duration: 3.3755774824839575s; animation-delay: 4.22617s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 22.2699%; top: 53.4044%; width: 2.6987px; height: 2.6987px; --duration: 4.6628418237974s; animation-delay: 3.67566s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 24.8999%; top: 38.5385%; width: 2.12423px; height: 2.12423px; --duration: 2.356847187342864s; animation-delay: 3.48895s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 65.09%; top: 66.6406%; width: 1.88428px; height: 1.88428px; --duration: 4.650585016100476s; animation-delay: 3.40821s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 44.4884%; top: 23.8601%; width: 2.80114px; height: 2.80114px; --duration: 3.8741721703684417s; animation-delay: 3.08529s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 60.9064%; top: 68.6611%; width: 2.69257px; height: 2.69257px; --duration: 2.965041332105962s; animation-delay: 4.86348s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 76.4438%; top: 56.6483%; width: 1.82734px; height: 1.82734px; --duration: 2.131711211396495s; animation-delay: 0.996198s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 97.8547%; top: 67.1135%; width: 1.51885px; height: 1.51885px; --duration: 2.1481842054430533s; animation-delay: 1.70537s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 56.7414%; top: 10.3732%; width: 1.49359px; height: 1.49359px; --duration: 2.23631640639925s; animation-delay: 0.460746s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 80.5587%; top: 54.1132%; width: 1.01115px; height: 1.01115px; --duration: 3.853919925512141s; animation-delay: 0.591981s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 7.87502%; top: 18.3686%; width: 2.25568px; height: 2.25568px; --duration: 4.042506191501834s; animation-delay: 3.07195s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 53.5974%; top: 28.2468%; width: 2.24655px; height: 2.24655px; --duration: 4.832601778482841s; animation-delay: 4.92487s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 47.5672%; top: 11.7039%; width: 2.99162px; height: 2.99162px; --duration: 2.6835540504394535s; animation-delay: 0.206203s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 94.6204%; top: 78.4411%; width: 1.12193px; height: 1.12193px; --duration: 2.805989506648016s; animation-delay: 4.64937s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 6.08987%; top: 26.3503%; width: 2.9287px; height: 2.9287px; --duration: 2.400146854023581s; animation-delay: 0.786198s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 24.7103%; top: 59.0279%; width: 1.45248px; height: 1.45248px; --duration: 2.938231235495131s; animation-delay: 0.538545s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 58.4464%; top: 72.4306%; width: 1.17256px; height: 1.17256px; --duration: 3.7110787278730926s; animation-delay: 3.04542s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 8.26213%; top: 94.4482%; width: 1.20816px; height: 1.20816px; --duration: 4.788821551853673s; animation-delay: 1.13097s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 30.4639%; top: 78.7256%; width: 2.85387px; height: 2.85387px; --duration: 2.9570803687831235s; animation-delay: 4.87177s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 18.9942%; top: 83.3327%; width: 2.485px; height: 2.485px; --duration: 3.7949651400616693s; animation-delay: 3.05693s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 34.3728%; top: 77.8664%; width: 1.44043px; height: 1.44043px; --duration: 4.469471704876553s; animation-delay: 3.78489s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 54.6444%; top: 31.8685%; width: 2.89377px; height: 2.89377px; --duration: 4.596419043682376s; animation-delay: 2.91264s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 45.6131%; top: 13.4717%; width: 1.3721px; height: 1.3721px; --duration: 4.918621448861379s; animation-delay: 0.652328s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 13.157%; top: 35.2126%; width: 2.18605px; height: 2.18605px; --duration: 2.294041216017034s; animation-delay: 2.48481s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 91.1658%; top: 6.36113%; width: 2.1229px; height: 2.1229px; --duration: 3.734100357827982s; animation-delay: 1.85633s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 19.1769%; top: 50.871%; width: 1.01038px; height: 1.01038px; --duration: 4.488141432065986s; animation-delay: 1.03936s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 62.9702%; top: 24.9933%; width: 2.584px; height: 2.584px; --duration: 4.956727946364021s; animation-delay: 4.92943s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 85.7735%; top: 32.6851%; width: 2.2489px; height: 2.2489px; --duration: 2.936960334324342s; animation-delay: 1.93039s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 28.9529%; top: 65.0497%; width: 1.70053px; height: 1.70053px; --duration: 3.9778419825901574s; animation-delay: 4.66855s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 1.454%; top: 41.9297%; width: 2.42802px; height: 2.42802px; --duration: 2.3342042446190567s; animation-delay: 1.05698s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 39.0529%; top: 43.7016%; width: 1.76958px; height: 1.76958px; --duration: 2.757752274122679s; animation-delay: 2.9875s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 56.2143%; top: 58.2507%; width: 1.86291px; height: 1.86291px; --duration: 3.823034789974736s; animation-delay: 1.72573s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 97.6386%; top: 11.021%; width: 2.69481px; height: 2.69481px; --duration: 4.229599225222236s; animation-delay: 4.23264s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 19.9327%; top: 49.3795%; width: 1.40966px; height: 1.40966px; --duration: 3.1051423217452134s; animation-delay: 4.25505s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 70.4387%; top: 28.3302%; width: 1.61496px; height: 1.61496px; --duration: 3.529107159499274s; animation-delay: 4.37204s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 36.6969%; top: 99.6337%; width: 2.27688px; height: 2.27688px; --duration: 3.815027954297303s; animation-delay: 4.21177s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 52.3238%; top: 77.0701%; width: 2.41542px; height: 2.41542px; --duration: 4.849069197538542s; animation-delay: 0.0360347s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 34.8916%; top: 13.0404%; width: 1.68703px; height: 1.68703px; --duration: 3.4801449755084244s; animation-delay: 0.177596s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 78.4494%; top: 5.46849%; width: 1.88219px; height: 1.88219px; --duration: 4.970762004518827s; animation-delay: 0.985491s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 21.1396%; top: 30.4075%; width: 2.10767px; height: 2.10767px; --duration: 4.282301126071096s; animation-delay: 3.15889s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 26.4891%; top: 76.1113%; width: 2.96204px; height: 2.96204px; --duration: 2.179825719509839s; animation-delay: 2.47972s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 59.6717%; top: 94.0738%; width: 1.99697px; height: 1.99697px; --duration: 4.267095256901194s; animation-delay: 2.10183s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 52.1412%; top: 60.1545%; width: 2.11606px; height: 2.11606px; --duration: 2.8020648264175536s; animation-delay: 4.89513s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 45.9963%; top: 86.7031%; width: 1.84802px; height: 1.84802px; --duration: 4.754746491764838s; animation-delay: 4.67474s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 11.3831%; top: 51.9945%; width: 2.75007px; height: 2.75007px; --duration: 3.020871555116706s; animation-delay: 2.10871s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 85.6062%; top: 66.4989%; width: 2.60083px; height: 2.60083px; --duration: 4.527390017639123s; animation-delay: 0.789102s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 33.3082%; top: 72.4236%; width: 2.29192px; height: 2.29192px; --duration: 2.4954754390413676s; animation-delay: 4.93084s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 53.9412%; top: 10.1279%; width: 1.50438px; height: 1.50438px; --duration: 2.3100674913200043s; animation-delay: 4.35363s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 17.5445%; top: 61.0903%; width: 2.72173px; height: 2.72173px; --duration: 4.420465540161064s; animation-delay: 2.53899s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 15.4938%; top: 11.1281%; width: 2.92998px; height: 2.92998px; --duration: 4.168906854566233s; animation-delay: 0.879856s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 51.3311%; top: 39.6005%; width: 2.61322px; height: 2.61322px; --duration: 3.46851669928827s; animation-delay: 1.35325s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 83.9933%; top: 57.7985%; width: 1.35411px; height: 1.35411px; --duration: 3.8505707821033477s; animation-delay: 1.13245s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 96.0721%; top: 26.9569%; width: 2.94935px; height: 2.94935px; --duration: 2.4493381196914656s; animation-delay: 0.832598s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 73.6887%; top: 84.5577%; width: 2.9069px; height: 2.9069px; --duration: 4.107146117751375s; animation-delay: 0.0570597s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 13.0825%; top: 66.447%; width: 1.16191px; height: 1.16191px; --duration: 3.472991936347846s; animation-delay: 2.37781s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 60.0763%; top: 95.2344%; width: 1.36898px; height: 1.36898px; --duration: 3.618829305754217s; animation-delay: 4.85391s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 21.3738%; top: 17.6981%; width: 1.77521px; height: 1.77521px; --duration: 3.001090391785009s; animation-delay: 4.9349s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 42.3342%; top: 84.1512%; width: 1.86815px; height: 1.86815px; --duration: 4.948697863250594s; animation-delay: 2.3365s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 19.5268%; top: 70.3364%; width: 2.88345px; height: 2.88345px; --duration: 2.9505030533047814s; animation-delay: 0.699152s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 78.3054%; top: 9.40191%; width: 1.98473px; height: 1.98473px; --duration: 3.965706495005598s; animation-delay: 2.14191s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 83.6639%; top: 77.819%; width: 1.35365px; height: 1.35365px; --duration: 4.9096648352165s; animation-delay: 3.63173s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 17.4134%; top: 65.3454%; width: 1.69174px; height: 1.69174px; --duration: 4.118533466275346s; animation-delay: 4.54335s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 94.8227%; top: 27.1303%; width: 1.95562px; height: 1.95562px; --duration: 4.946363046983205s; animation-delay: 0.968895s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 79.5989%; top: 55.1248%; width: 2.17326px; height: 2.17326px; --duration: 2.4623331131393913s; animation-delay: 2.73506s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 30.8072%; top: 9.66654%; width: 1.79566px; height: 1.79566px; --duration: 3.26902286175062s; animation-delay: 3.21801s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 10.062%; top: 64.1732%; width: 1.51825px; height: 1.51825px; --duration: 4.237090666091877s; animation-delay: 4.24146s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 14.209%; top: 12.6386%; width: 2.49128px; height: 2.49128px; --duration: 4.900831656976945s; animation-delay: 1.83354s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 42.689%; top: 79.5291%; width: 1.34642px; height: 1.34642px; --duration: 2.7754348059192457s; animation-delay: 1.07356s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 31.2647%; top: 18.7439%; width: 2.37294px; height: 2.37294px; --duration: 2.325769266703832s; animation-delay: 2.5557s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 6.97555%; top: 67.0583%; width: 2.86408px; height: 2.86408px; --duration: 3.3804138659456813s; animation-delay: 0.945338s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 32.1327%; top: 82.1147%; width: 2.27159px; height: 2.27159px; --duration: 4.25765710335262s; animation-delay: 3.28882s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 19.966%; top: 81.6354%; width: 2.77054px; height: 2.77054px; --duration: 2.99147596261939s; animation-delay: 0.097894s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 21.4348%; top: 88.7768%; width: 1.19512px; height: 1.19512px; --duration: 2.3848399224897916s; animation-delay: 1.83923s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 70.5816%; top: 84.2539%; width: 1.4278px; height: 1.4278px; --duration: 3.348978171058243s; animation-delay: 1.90041s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 3.38154%; top: 56.6175%; width: 1.54124px; height: 1.54124px; --duration: 3.5981594229748377s; animation-delay: 0.602099s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 39.3202%; top: 18.6621%; width: 2.13321px; height: 2.13321px; --duration: 2.702379034848938s; animation-delay: 4.42764s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 53.3134%; top: 44.5831%; width: 1.18771px; height: 1.18771px; --duration: 2.146844700000724s; animation-delay: 3.23492s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 3.19843%; top: 56.4854%; width: 2.68336px; height: 2.68336px; --duration: 2.579851013684547s; animation-delay: 3.59959s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 20.6167%; top: 32.4544%; width: 1.091px; height: 1.091px; --duration: 2.662809789250904s; animation-delay: 1.36734s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 68.8389%; top: 18.1318%; width: 2.94238px; height: 2.94238px; --duration: 4.075011313975508s; animation-delay: 0.161178s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 61.7519%; top: 53.6404%; width: 1.28459px; height: 1.28459px; --duration: 4.0858756876180955s; animation-delay: 2.19152s; transform: translate(4.70312px, -4.84093px);"></div><div class="star" style="left: 70.9429%; top: 51.0846%; width: 1.77209px; height: 1.77209px; --duration: 2.8508835483658275s; animation-delay: 4.54044s; transform: translate(0.940625px, -0.968185px);"></div><div class="star" style="left: 82.3826%; top: 49.3811%; width: 1.97739px; height: 1.97739px; --duration: 2.9862013028001084s; animation-delay: 2.05297s; transform: translate(1.88125px, -1.93637px);"></div><div class="star" style="left: 62.3912%; top: 20.2199%; width: 2.29556px; height: 2.29556px; --duration: 3.3876398340928837s; animation-delay: 1.8486s; transform: translate(2.82187px, -2.90456px);"></div><div class="star" style="left: 10.9267%; top: 32.3319%; width: 2.6435px; height: 2.6435px; --duration: 2.774586113402818s; animation-delay: 0.109223s; transform: translate(3.7625px, -3.87274px);"></div><div class="star" style="left: 29.0191%; top: 23.6899%; width: 2.20999px; height: 2.20999px; --duration: 4.75744451561003s; animation-delay: 1.28052s; transform: translate(4.70312px, -4.84093px);"></div></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-20 py-6 max-w-[1200px] mx-auto left-1/2 -translate-x-1/2 nav-blur bg-transparent">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-on-surface">Kavya R</span>
+</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-primary relative after:content-['✦'] after:absolute after:-bottom-5 after:left-1/2 after:-translate-x-1/2 after:text-[10px] font-label-mono text-label-mono hover:text-primary transition-colors duration-300" href="#">Work</a>
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary transition-colors duration-300" href="#">Experience</a>
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-primary hover:scale-95 duration-200 transition-soft"><span class="font-headline-md text-primary text-[20px]"><span style="text-align: start; background-color: rgba(19, 20, 16, 0.8);">ക</span></span></button>
+<!-- Mobile Menu Toggle (simplified) -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<main class="relative z-10">
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center pt-24 px-6 md:px-20 max-w-[1200px] mx-auto">
+<div class="hero-glow"></div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center w-full">
+<!-- Left Column Text -->
+<div class="md:col-span-7 z-20">
+<div class="flex items-center gap-3 mb-6">
+<span class="h-[1px] w-8 bg-primary"></span>
+<span class="font-label-mono text-label-mono tracking-widest text-primary-container">SOFTWARE ENGINEER · AI EXPLORER · DANCER</span>
+</div>
+<h1 class="font-display-hero text-headline-lg-mobile md:text-display-hero mb-8 text-on-surface leading-tight">
+                        Hi, I'm <span class="text-primary italic">Kavya.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-12">
+                        I build full-stack apps and chase ideas at the intersection of code, intelligence, and design. Crafting digital experiences with architectural precision and a storyteller's soul.
+                    </p>
+<div class="flex flex-wrap gap-6 mb-16">
+<a class="px-8 py-4 border border-primary-container text-primary-container font-label-mono text-label-mono rounded-lg transition-soft hover:bg-primary-container/10 hover:shadow-[0_0_20px_rgba(196,168,130,0.15)] flex items-center gap-2 group" href="#projects">
+                            VIEW PROJECTS
+                            <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<a class="px-8 py-4 text-on-surface-variant font-label-mono text-label-mono transition-soft hover:text-primary flex items-center gap-2 group relative" href="#resume">
+                            RESUME
+                            <span class="absolute bottom-4 left-8 right-8 h-[1px] bg-outline-variant scale-x-0 group-hover:scale-x-100 transition-transform origin-center"></span>
+</a>
+</div>
+<!-- Socials -->
+<div class="flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-soft flex items-center gap-2 group" href="#">
+<span class="font-label-mono text-label-mono">GITHUB</span>
+<span class="material-symbols-outlined text-[16px] opacity-0 group-hover:opacity-100 -translate-y-1 group-hover:translate-y-0 transition-soft" data-icon="north_east">north_east</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary transition-soft flex items-center gap-2 group" href="#">
+<span class="font-label-mono text-label-mono">LINKEDIN</span>
+<span class="material-symbols-outlined text-[16px] opacity-0 group-hover:opacity-100 -translate-y-1 group-hover:translate-y-0 transition-soft" data-icon="north_east">north_east</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary transition-soft flex items-center gap-2 group" href="#">
+<span class="font-label-mono text-label-mono">INSTAGRAM</span>
+<span class="material-symbols-outlined text-[16px] opacity-0 group-hover:opacity-100 -translate-y-1 group-hover:translate-y-0 transition-soft" data-icon="north_east">north_east</span>
+</a>
+</div>
+</div>
+<!-- Right Column Profile Image -->
+<div class="md:col-span-5 relative z-10 flex justify-center md:justify-end">
+<div class="relative w-full max-w-[400px] aspect-square">
+<!-- Decorative circle behind image -->
+<div class="absolute inset-0 rounded-full border border-primary-container/20 animate-[spin_20s_linear_infinite]"></div>
+<div class="absolute -inset-4 rounded-full border border-primary-container/10 animate-[spin_30s_linear_infinite_reverse]"></div>
+<div class="relative rounded-full overflow-hidden w-full h-full border-4 border-bg-surface p-2 shadow-2xl">
+<img alt="Kavya R — Software Engineer and AI Explorer" class="w-full h-full object-cover rounded-full filter grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV9N2aaxsSxJ8yXbttX87jHI2Vtoo9OrZtkklsxY4gkCiUFecMusPdYnsVW8UquP0tg2VhDxAGluJsuiWYkTifUiHLf4ViJb6hXG5NlabOrHBNVHL1kqT_J_xl_1g4a0vWtqbc-1NXNIeF01j32sVK_rq71HVdtAvU7HTlzURcSo5LKJw6pQ9yw7TKT8ey2QY4cn1ndb5-ydm7b7fGUBjpGDpBKcewI1-C8pqLTC6cRU18OjuTw4vn5cUxoY7XhGFkyNsf1z9Lckk">
+</div>
+<!-- ✦ Floaties -->
+<div class="absolute top-10 right-0 text-primary-container/40 text-2xl">✦</div>
+<div class="absolute bottom-20 left-0 text-primary-container/20 text-xl">✦</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Strip -->
+<section class="py-20 px-6 md:px-20 max-w-[1200px] mx-auto border-t border-border-subtle">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center">
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-primary mb-1">9.50</span>
+<span class="font-label-mono text-[10px] tracking-widest text-on-surface-variant uppercase">CGPA</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-primary mb-1">3+</span>
+<span class="font-label-mono text-[10px] tracking-widest text-on-surface-variant uppercase">Projects</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-primary mb-1">2</span>
+<span class="font-label-mono text-[10px] tracking-widest text-on-surface-variant uppercase">Hackathon Wins</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-primary mb-1">∞</span>
+<span class="font-label-mono text-[10px] tracking-widest text-on-surface-variant uppercase">Lines of Code</span>
+</div>
+</div>
+</section>
+<!-- Brief Bento Teaser -->
+<section class="py-section-gap px-6 md:px-20 max-w-[1200px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-bg-secondary p-card-padding border border-border-subtle rounded-xl flex flex-col justify-between group hover:border-primary-container/40 transition-soft">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Latest Project</h3>
+<p class="text-on-surface-variant max-w-md">Predictive modeling for supply chain efficiency using distributed AI nodes.</p>
+</div>
+<div class="mt-8 flex justify-between items-end">
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container-high rounded text-label-mono text-[11px] text-tertiary">PYTHON</span>
+<span class="px-3 py-1 bg-surface-container-high rounded text-label-mono text-[11px] text-tertiary">TENSORFLOW</span>
+</div>
+<span class="material-symbols-outlined text-primary-container group-hover:translate-x-2 transition-transform" data-icon="arrow_right_alt">arrow_right_alt</span>
+</div>
+</div>
+<div class="bg-bg-secondary p-card-padding border border-border-subtle rounded-xl flex flex-col items-center justify-center text-center group hover:border-primary-container/40 transition-soft">
+<div class="w-16 h-16 rounded-full bg-primary-container/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary-container text-3xl" data-icon="terminal">terminal</span>
+</div>
+<h3 class="font-headline-md text-[24px] text-on-surface mb-2">Technical Skills</h3>
+<p class="text-on-surface-variant text-sm font-label-mono">Full-Stack · ML/AI · Cloud</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<section id="contact" class="py-section-gap px-6 md:px-20 max-w-[1200px] mx-auto border-t border-border-subtle relative overflow-hidden"><div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] pointer-events-none"></div><div class="grid grid-cols-1 md:grid-cols-12 gap-12"><div class="md:col-span-5"><h2 class="font-display-hero text-headline-lg-mobile md:text-headline-lg text-on-surface mb-6 uppercase">SAY HELLO <span class="text-primary italic">✦</span></h2><p class="font-body-lg text-on-surface-variant max-w-sm mb-8">Interested in collaborating or just want to talk about AI and design? Drop a message.</p><div class="flex flex-col gap-4 font-label-mono text-label-mono"><a href="mailto:hello@kavyar.dev" class="text-primary hover:underline">hello@kavyar.dev</a><span class="text-on-surface-variant">Based in Bengaluru, India</span></div></div><div class="md:col-span-7"><form class="space-y-8"><div class="grid grid-cols-1 md:grid-cols-2 gap-8"><div><label class="block font-label-mono text-[10px] tracking-widest text-primary-container uppercase mb-2">Name</label><input type="text" class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 transition-colors py-2 text-on-surface" placeholder="Your Name"></div><div><label class="block font-label-mono text-[10px] tracking-widest text-primary-container uppercase mb-2">Email</label><input type="email" class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 transition-colors py-2 text-on-surface" placeholder="email@example.com"></div></div><div><label class="block font-label-mono text-[10px] tracking-widest text-primary-container uppercase mb-2">Message</label><textarea rows="4" class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 transition-colors py-2 text-on-surface resize-none" placeholder="What's on your mind?"></textarea></div><button type="submit" class="px-12 py-4 border border-primary-container text-primary-container font-label-mono text-label-mono rounded-lg transition-soft hover:bg-primary-container/10 flex items-center gap-2 group">SEND MESSAGE <span class="material-symbols-outlined text-[18px] group-hover:-translate-y-1 transition-transform">north_east</span></button></form></div></div></section>
+<footer class="w-full py-section-gap px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto border-t border-outline-variant bg-bg-deep">
+<div class="font-body-md text-body-md text-on-surface-variant font-label-mono text-label-mono mb-8 md:mb-0">
+            © Kavya R — Crafted with precision</div>
+<div class="flex gap-margin-desktop">
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary-fixed transition-all duration-200 hover:translate-y-[-2px]" href="#">LinkedIn</a>
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary-fixed transition-all duration-200 hover:translate-y-[-2px]" href="#">GitHub</a>
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary-fixed transition-all duration-200 hover:translate-y-[-2px]" href="#">Instagram</a>
+</div>
+</footer>
+<script>
+        // Generate Star Particles
+        const starContainer = document.getElementById('star-container');
+        const starCount = 100;
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            const size = Math.random() * 2 + 1;
+            const duration = Math.random() * 3 + 2;
+            const delay = Math.random() * 5;
+
+            star.style.left = `${x}%`;
+            star.style.top = `${y}%`;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.setProperty('--duration', `${duration}s`);
+            star.style.animationDelay = `${delay}s`;
+
+            starContainer.appendChild(star);
+        }
+
+        // Parallax Effect for Stars
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth - 0.5;
+            const mouseY = e.clientY / window.innerHeight - 0.5;
+            
+            const stars = document.querySelectorAll('.star');
+            stars.forEach((star, index) => {
+                const speed = (index % 5 + 1) * 2;
+                star.style.transform = `translate(${mouseX * speed}px, ${mouseY * speed}px)`;
+            });
+        });
+
+        // Simple scroll behavior for navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-background/80');
+            } else {
+                nav.classList.remove('bg-background/80');
+            }
+        });
+    </script>
+
+
+</body></html>

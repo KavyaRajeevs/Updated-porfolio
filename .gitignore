@@ -1,0 +1,9 @@
+node_modules
+dist
+.cursor/mcp.json
+.cursor/fetch-stitch.js
+dist-ssr
+*.local
+.env
+.env.*
+.DS_Store

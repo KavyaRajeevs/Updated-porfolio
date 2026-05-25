@@ -1,0 +1,301 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&amp;family=JetBrains+Mono:wght@400&amp;family=Playfair+Display:ital,wght@0,700;0,900;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#584325",
+                    "on-background": "#e5e2db",
+                    "on-tertiary-fixed": "#00210f",
+                    "on-tertiary-container": "#19492e",
+                    "surface-container-low": "#1c1c18",
+                    "secondary-container": "#4c4177",
+                    "inverse-on-surface": "#31312c",
+                    "bg-deep": "#0A0A0F",
+                    "tertiary": "#a1d4af",
+                    "primary-fixed": "#fddeb5",
+                    "inverse-primary": "#715b3a",
+                    "outline": "#998f84",
+                    "surface-tint": "#e0c29a",
+                    "on-secondary-container": "#bdb0ee",
+                    "on-secondary-fixed-variant": "#4a3f74",
+                    "on-primary-container": "#513d1f",
+                    "secondary-fixed-dim": "#ccbefd",
+                    "on-primary": "#3f2d11",
+                    "surface-container-highest": "#353530",
+                    "on-tertiary": "#04381f",
+                    "primary-fixed-dim": "#e0c29a",
+                    "error": "#ffb4ab",
+                    "surface-container-high": "#2a2a26",
+                    "secondary-fixed": "#e7deff",
+                    "background": "#131410",
+                    "bg-secondary": "#111118",
+                    "on-surface-variant": "#d0c5b8",
+                    "on-surface": "#e5e2db",
+                    "text-muted": "#8A8799",
+                    "secondary": "#ccbefd",
+                    "on-error": "#690005",
+                    "tertiary-container": "#86b895",
+                    "bg-surface": "#1A1A24",
+                    "tertiary-fixed": "#bbefc9",
+                    "inverse-surface": "#e5e2db",
+                    "tertiary-fixed-dim": "#9fd2ae",
+                    "surface-container-lowest": "#0e0e0b",
+                    "on-primary-fixed": "#281901",
+                    "primary-container": "#c4a882",
+                    "primary": "#e1c39b",
+                    "error-container": "#93000a",
+                    "outline-variant": "#4d463c",
+                    "border-subtle": "#252530",
+                    "on-tertiary-fixed-variant": "#205034",
+                    "surface-container": "#20201c",
+                    "surface-dim": "#131410",
+                    "surface-variant": "#353530",
+                    "surface": "#131410",
+                    "on-secondary-fixed": "#1e1146",
+                    "on-secondary": "#33285c",
+                    "surface-bright": "#3a3935",
+                    "on-error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "card-padding": "32px",
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "section-gap": "120px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "label-mono": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "display-hero": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "label-mono": ["13px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-hero": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "300"}],
+                    "body-md": ["16px", {"lineHeight": "1.7", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0F;
+            color: #e5e2db;
+            overflow-x: hidden;
+        }
+        .star-field {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-dot::after {
+            content: '✦';
+            position: absolute;
+            bottom: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary/30 selection:text-primary">
+<!-- Background Star Layer -->
+<div class="star-field" id="starField"><div class="absolute bg-white rounded-full" style="width: 1.39299px; height: 1.39299px; left: 37.7839%; top: 12.6631%; opacity: 0.788265; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.5942px; height: 1.5942px; left: 99.7453%; top: 47.4592%; opacity: 0.134004; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.72109px; height: 1.72109px; left: 5.53772%; top: 46.5708%; opacity: 0.179905; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.63394px; height: 1.63394px; left: 56.6257%; top: 74.0518%; opacity: 0.133222; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.471047px; height: 0.471047px; left: 67.7483%; top: 2.83%; opacity: 0.75689; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.36808px; height: 0.36808px; left: 11.0866%; top: 3.47675%; opacity: 0.428981; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.532766px; height: 0.532766px; left: 90.6787%; top: 54.0124%; opacity: 0.433257; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.8558px; height: 1.8558px; left: 36.3006%; top: 64.4056%; opacity: 0.173615; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.345994px; height: 0.345994px; left: 1.07925%; top: 39.851%; opacity: 0.290759; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.820727px; height: 0.820727px; left: 88.2967%; top: 48.5395%; opacity: 0.162582; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.898653px; height: 0.898653px; left: 75.0612%; top: 14.1575%; opacity: 0.304435; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.71457px; height: 1.71457px; left: 3.35526%; top: 2.91956%; opacity: 0.0912848; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.23545px; height: 1.23545px; left: 76.1089%; top: 62.1021%; opacity: 0.927007; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.80673px; height: 0.80673px; left: 46.8421%; top: 52.4765%; opacity: 0.553041; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.09227px; height: 1.09227px; left: 13.2819%; top: 68.0339%; opacity: 0.606998; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.84361px; height: 1.84361px; left: 6.84835%; top: 77.3082%; opacity: 0.0365896; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.591212px; height: 0.591212px; left: 51.5924%; top: 1.97151%; opacity: 0.127913; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.179033px; height: 0.179033px; left: 37.374%; top: 63.3759%; opacity: 0.519795; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.930711px; height: 0.930711px; left: 1.24165%; top: 4.04742%; opacity: 0.82041; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.52048px; height: 1.52048px; left: 9.80911%; top: 25.3544%; opacity: 0.958953; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.77904px; height: 1.77904px; left: 70.1067%; top: 34.6382%; opacity: 0.930891; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.10815px; height: 1.10815px; left: 17.2561%; top: 28.901%; opacity: 0.384313; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.688245px; height: 0.688245px; left: 88.7057%; top: 10.9015%; opacity: 0.939023; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.73535px; height: 1.73535px; left: 5.76579%; top: 65.5425%; opacity: 0.880443; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.132311px; height: 0.132311px; left: 55.4339%; top: 28.7229%; opacity: 0.336695; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.130406px; height: 0.130406px; left: 21.1563%; top: 69.1841%; opacity: 0.448967; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.727855px; height: 0.727855px; left: 58.2908%; top: 6.65175%; opacity: 0.0579751; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.52751px; height: 1.52751px; left: 72.1818%; top: 1.89828%; opacity: 0.933897; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.345353px; height: 0.345353px; left: 54.1974%; top: 82.5088%; opacity: 0.142416; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.67675px; height: 1.67675px; left: 18.1911%; top: 4.37092%; opacity: 0.307053; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.20948px; height: 1.20948px; left: 79.9979%; top: 40.6166%; opacity: 0.966634; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.0925387px; height: 0.0925387px; left: 54.909%; top: 62.465%; opacity: 0.752338; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.565088px; height: 0.565088px; left: 14.2767%; top: 75.4168%; opacity: 0.821156; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.83486px; height: 1.83486px; left: 32.1982%; top: 0.444396%; opacity: 0.289758; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.65573px; height: 0.65573px; left: 8.92177%; top: 18.4812%; opacity: 0.397601; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.95309px; height: 1.95309px; left: 63.8946%; top: 91.2187%; opacity: 0.410824; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.9094px; height: 1.9094px; left: 13.802%; top: 70.2605%; opacity: 0.233333; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.69052px; height: 1.69052px; left: 20.6473%; top: 38.24%; opacity: 0.758388; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.12398px; height: 1.12398px; left: 79.8365%; top: 71.3272%; opacity: 0.796494; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.228786px; height: 0.228786px; left: 80.1754%; top: 45.7788%; opacity: 0.75595; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.14394px; height: 1.14394px; left: 43.6633%; top: 25.8764%; opacity: 0.258426; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.77997px; height: 1.77997px; left: 73.6774%; top: 41.566%; opacity: 0.706467; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.860515px; height: 0.860515px; left: 29.3248%; top: 32.2577%; opacity: 0.119608; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.436513px; height: 0.436513px; left: 85.312%; top: 63.8658%; opacity: 0.319608; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.93398px; height: 1.93398px; left: 11.438%; top: 98.2386%; opacity: 0.923421; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.17836px; height: 1.17836px; left: 72.3857%; top: 31.1498%; opacity: 0.132115; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.17028px; height: 1.17028px; left: 92.5579%; top: 6.73635%; opacity: 0.49657; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.447618px; height: 0.447618px; left: 18.4977%; top: 50.8506%; opacity: 0.501481; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.16081px; height: 1.16081px; left: 84.9152%; top: 63.6698%; opacity: 0.47886; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.964211px; height: 0.964211px; left: 78.4473%; top: 83.285%; opacity: 0.0924379; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.972527px; height: 0.972527px; left: 92.9669%; top: 11.3115%; opacity: 0.333636; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.796226px; height: 0.796226px; left: 75.4545%; top: 38.0942%; opacity: 0.146786; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.189105px; height: 0.189105px; left: 40.4325%; top: 47.0621%; opacity: 0.115953; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.99903px; height: 0.99903px; left: 10.9047%; top: 99.2025%; opacity: 0.542669; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.51628px; height: 1.51628px; left: 18.8752%; top: 34.2593%; opacity: 0.20869; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.4356px; height: 1.4356px; left: 2.08304%; top: 16.0709%; opacity: 0.215123; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.49593px; height: 1.49593px; left: 89.6931%; top: 21.3614%; opacity: 0.939835; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.376622px; height: 0.376622px; left: 7.36977%; top: 62.2509%; opacity: 0.393935; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.38558px; height: 1.38558px; left: 18.9378%; top: 2.16457%; opacity: 0.715108; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.40596px; height: 1.40596px; left: 22.9179%; top: 79.0435%; opacity: 0.0997057; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.89031px; height: 1.89031px; left: 84.4299%; top: 46.7222%; opacity: 0.0105741; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.7839px; height: 1.7839px; left: 67.1986%; top: 49.1254%; opacity: 0.32398; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.35038px; height: 1.35038px; left: 72.9958%; top: 57.2246%; opacity: 0.142671; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.27204px; height: 1.27204px; left: 97.0529%; top: 66.0515%; opacity: 0.584168; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.5958px; height: 1.5958px; left: 70.6964%; top: 14.5829%; opacity: 0.753797; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.125578px; height: 0.125578px; left: 62.2134%; top: 0.414366%; opacity: 0.550931; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.49502px; height: 1.49502px; left: 31.6066%; top: 50.0779%; opacity: 0.299959; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.30989px; height: 1.30989px; left: 18.3109%; top: 83.7039%; opacity: 0.173355; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.331546px; height: 0.331546px; left: 17.981%; top: 82.8169%; opacity: 0.335977; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.42054px; height: 1.42054px; left: 8.53924%; top: 5.02676%; opacity: 0.348551; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.98165px; height: 1.98165px; left: 67.1772%; top: 86.5448%; opacity: 0.364582; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.652259px; height: 0.652259px; left: 25.9747%; top: 12.3245%; opacity: 0.812679; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.0065378px; height: 0.0065378px; left: 78.2922%; top: 83.6949%; opacity: 0.385427; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.27796px; height: 1.27796px; left: 74.567%; top: 36.7817%; opacity: 0.085256; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.398692px; height: 0.398692px; left: 81.3676%; top: 50.7218%; opacity: 0.690612; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.846204px; height: 0.846204px; left: 2.09263%; top: 49.5982%; opacity: 0.781337; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.30471px; height: 1.30471px; left: 38.9104%; top: 44.0858%; opacity: 0.0781381; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.907529px; height: 0.907529px; left: 10.5246%; top: 64.5099%; opacity: 0.954798; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.1478px; height: 1.1478px; left: 16.2292%; top: 87.6865%; opacity: 0.242004; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.599308px; height: 0.599308px; left: 0.0280819%; top: 79.8484%; opacity: 0.778955; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.13158px; height: 1.13158px; left: 35.5878%; top: 90.0284%; opacity: 0.507039; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.9885px; height: 1.9885px; left: 19.2761%; top: 34.3653%; opacity: 0.333452; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.36762px; height: 1.36762px; left: 0.264841%; top: 77.2659%; opacity: 0.490483; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.544757px; height: 0.544757px; left: 86.6626%; top: 84.4948%; opacity: 0.491423; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.04993px; height: 1.04993px; left: 35.1167%; top: 27.6275%; opacity: 0.450818; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.15463px; height: 0.15463px; left: 46.8304%; top: 70.3744%; opacity: 0.995621; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.61554px; height: 1.61554px; left: 99.4904%; top: 33.4499%; opacity: 0.0187063; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.23272px; height: 0.23272px; left: 53.6666%; top: 32.0972%; opacity: 0.722887; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.804037px; height: 0.804037px; left: 23.2968%; top: 70.3105%; opacity: 0.641609; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.35617px; height: 1.35617px; left: 87.3225%; top: 74.2046%; opacity: 0.512662; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.96274px; height: 1.96274px; left: 53.6356%; top: 13.3998%; opacity: 0.291668; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.29412px; height: 0.29412px; left: 84.0485%; top: 59.9514%; opacity: 0.593862; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.0769755px; height: 0.0769755px; left: 10.4195%; top: 79.2646%; opacity: 0.899204; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 0.480875px; height: 0.480875px; left: 20.9619%; top: 10.0196%; opacity: 0.672142; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.94271px; height: 1.94271px; left: 52.3904%; top: 84.6155%; opacity: 0.0293213; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.0481px; height: 1.0481px; left: 10.7948%; top: 97.2975%; opacity: 0.426571; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.51837px; height: 1.51837px; left: 25.5379%; top: 32.2535%; opacity: 0.698729; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.03097px; height: 1.03097px; left: 57.9517%; top: 87.5767%; opacity: 0.193943; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.81604px; height: 1.81604px; left: 24.6111%; top: 96.6269%; opacity: 0.287665; transition: opacity 3s ease-in-out;"></div><div class="absolute bg-white rounded-full" style="width: 1.33766px; height: 1.33766px; left: 8.01865%; top: 47.529%; opacity: 0.027494; transition: opacity 3s ease-in-out;"></div></div>
+<!-- Navigation Shell -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-20 py-8 max-w-[1200px] mx-auto left-1/2 -translate-x-1/2 backdrop-blur-md bg-background/80">
+<div class="font-headline-md text-headline-md text-on-surface dark:text-on-surface">Kavya R&nbsp;</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary transition-colors duration-300" href="#">Work</a>
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary transition-colors duration-300" href="#">Experience</a>
+<a class="text-primary dark:text-primary-fixed relative after:content-['✦'] after:absolute after:-bottom-4 after:left-1/2 after:-translate-x-1/2 after:text-[10px] font-label-mono text-label-mono" href="#">About</a>
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary transition-colors duration-300" href="#">Contact</a>
+<span class="text-primary ml-4 font-headline-md text-xl leading-none">ക</span>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</div>
+</nav>
+<main class="relative pt-32 max-w-[1200px] mx-auto px-6 md:px-20">
+<!-- About Section Header -->
+<header class="mb-20">
+<p class="font-label-mono text-label-mono text-primary tracking-widest mb-4">03 / IDENTITY</p>
+<h1 class="font-headline-lg text-headline-lg md:text-[64px] tracking-[0.2em] uppercase border-b border-border-subtle pb-8">
+                ABOUT ME
+            </h1>
+</header>
+<!-- Two Column Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24 mb-section-gap items-start">
+<!-- Left Column: Bio Text -->
+<div class="md:col-span-7 space-y-12">
+<section>
+<div class="flex items-center gap-4 mb-6">
+<span class="text-primary">✦</span>
+<h2 class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted">The Foundation</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed italic">
+                        As a Computer Science graduate poised to join the ranks at <span class="text-primary font-bold">UST Global</span>, my journey is rooted in the meticulous logic of software engineering. I find beauty in clean code and the quiet hum of a perfectly architected system.
+                    </p>
+</section>
+<section>
+<div class="flex items-center gap-4 mb-6">
+<span class="text-primary">✦</span>
+<h2 class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted">Rhythm &amp; Cosmos</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+                        Beyond the screen, my life moves to a different tempo. I am a practitioner of <span class="text-primary">Classical Dance</span>, an art form where every mudra is a precise calculation of emotion and movement. When the night falls, I turn my gaze upward—stargazing isn't just a hobby; it’s a reminder of our scale within the cosmic architecture.
+                    </p>
+</section>
+<section>
+<div class="flex items-center gap-4 mb-6">
+<span class="text-primary">✦</span>
+<h2 class="font-label-mono text-label-mono uppercase tracking-widest text-text-muted">The Horizon</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+                        Currently, I am deep-diving into the ethereal world of <span class="text-tertiary">Large Language Models</span> and autonomous AI agents. I believe the future of technology lies in tools that don't just process data, but understand the nuance of human intent, blending technical precision with creative intuition.
+                    </p>
+</section>
+<div class="pt-8">
+<button class="border border-primary-container px-8 py-4 text-primary-container font-label-mono text-label-mono uppercase tracking-widest hover:bg-primary-container hover:text-bg-deep transition-all duration-500 group flex items-center gap-3">
+                        Download Dossier
+                        <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Interest Tag Cloud (Bento-ish) -->
+<div class="md:col-span-5 relative">
+<div class="sticky top-40 bg-bg-secondary p-card-padding border border-border-subtle rounded-xl overflow-hidden group">
+<!-- Subtle Glow Effect -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/5 rounded-full blur-[80px] group-hover:bg-primary/10 transition-colors duration-700"></div>
+<h3 class="font-label-mono text-label-mono mb-12 text-center text-text-muted">INTELLECTUAL ECOSYSTEM</h3>
+<div class="flex flex-wrap gap-4 justify-center">
+<!-- Passion (Gold) -->
+<div class="px-6 py-2 rounded-full border border-primary text-primary font-label-mono text-label-mono hover:bg-primary hover:text-bg-deep transition-all duration-300 cursor-default scale-110">
+                            Classical Dance
+                        </div>
+<div class="px-5 py-2 rounded-full border border-primary/50 text-primary-fixed-dim font-label-mono text-label-mono hover:bg-primary transition-all duration-300 cursor-default">
+                            Astronomy
+                        </div>
+<div class="px-5 py-2 rounded-full border border-primary/30 text-on-primary-container font-label-mono text-label-mono hover:bg-primary transition-all duration-300 cursor-default translate-x-4">
+                            Wellness
+                        </div>
+<!-- Tech (Green) -->
+<div class="px-8 py-3 rounded-full border border-tertiary text-tertiary font-label-mono text-label-mono hover:bg-tertiary hover:text-bg-deep transition-all duration-300 cursor-default -rotate-2">
+                            AI / LLMs
+                        </div>
+<div class="px-5 py-2 rounded-full border border-tertiary/60 text-tertiary-fixed-dim font-label-mono text-label-mono hover:bg-tertiary transition-all duration-300 cursor-default">
+                            Agents
+                        </div>
+<div class="px-6 py-2 rounded-full border border-tertiary/40 text-on-tertiary-container font-label-mono text-label-mono hover:bg-tertiary transition-all duration-300 cursor-default -translate-x-2">
+                            Full Stack
+                        </div>
+<!-- Personal (Lavender) -->
+<div class="px-7 py-2 rounded-full border border-secondary text-secondary font-label-mono text-label-mono hover:bg-secondary hover:text-bg-deep transition-all duration-300 cursor-default rotate-3">
+                            Psychology
+                        </div>
+<div class="px-6 py-2 rounded-full border border-secondary/50 text-secondary-fixed-dim font-label-mono text-label-mono hover:bg-secondary transition-all duration-300 cursor-default">
+                            Kerala
+                        </div>
+<div class="px-6 py-2 rounded-full border border-secondary/30 text-on-secondary-container font-label-mono text-label-mono hover:bg-secondary transition-all duration-300 cursor-default">
+                            Aesthetics
+                        </div>
+</div>
+<div class="mt-12 flex justify-center">
+<img alt="Stargazing perspective" class="w-full h-48 object-cover rounded-lg grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-1000" data-alt="A cinematic, low-angle photograph of a clear night sky filled with a dense field of brilliant stars and the subtle purple and gold hues of the Milky Way. In the foreground, the dark silhouette of a telescope and a lone observer are framed against the cosmic vastness. The lighting is ethereal and nocturnal, utilizing deep blacks and subtle amber glows to create a mood of profound wonder and technical precision. The visual style is premium, high-resolution, and deeply atmospheric." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAISwjSmKQs4QZe095b4SzJl4w0Rt9JPC7FGUGxs2p5QPBpPRqx2LUGdpiidbbmiPYe-ktpdU5fxxuOLZEy1ptddVCSKUX7WTkgV-weQ4HsTDS4QkKM6Uuf8h9Dws_NUxGtCLkX8b65TtlbnnEO_eeEGEe6N4W4CA0rFuR5KyqTf_0gHClm29B4b8PjIqpIe2wzO-fArobrO1bOaWMUIcfj7Sza4tRJ8BMSpVwVDw2ksqAU_U9wt8m1EgfvlkR4PcHqsfcNkTGKk44">
+</div>
+</div>
+</div>
+</div>
+<!-- Experience Skeleton Preview (As per guidelines) -->
+<section class="mb-section-gap">
+<h2 class="font-label-mono text-label-mono text-text-muted mb-8 tracking-widest">FUTURE MILESTONES</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-card-padding border border-dashed border-border-subtle bg-transparent rounded-lg flex flex-col justify-center items-center h-48 opacity-40">
+<span class="material-symbols-outlined text-4xl mb-4">rocket_launch</span>
+<p class="font-label-mono text-label-mono">UST GLOBAL JOURNEY</p>
+</div>
+<div class="p-card-padding border border-dashed border-border-subtle bg-transparent rounded-lg flex flex-col justify-center items-center h-48 opacity-40">
+<span class="material-symbols-outlined text-4xl mb-4">psychology_alt</span>
+<p class="font-label-mono text-label-mono">AI AGENT RESEARCH</p>
+</div>
+<div class="p-card-padding border border-dashed border-border-subtle bg-transparent rounded-lg flex flex-col justify-center items-center h-48 opacity-40">
+<span class="material-symbols-outlined text-4xl mb-4">architecture</span>
+<p class="font-label-mono text-label-mono">SYSTEM DESIGN</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto border-t border-outline-variant bg-bg-deep">
+<div class="font-body-md text-body-md text-on-surface-variant font-label-mono text-label-mono mb-8 md:mb-0">
+            © Kavya R — Crafted with precision</div>
+<div class="flex gap-margin-desktop">
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary-fixed transition-all duration-200 hover:translate-y-[-2px]" href="#">LinkedIn</a>
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary-fixed transition-all duration-200 hover:translate-y-[-2px]" href="#">GitHub</a>
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary-fixed transition-all duration-200 hover:translate-y-[-2px]" href="#">Instagram</a>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Particle Star Field
+        const starField = document.getElementById('starField');
+        const starCount = 100;
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'absolute bg-white rounded-full';
+            const size = Math.random() * 2;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.opacity = Math.random();
+            
+            // Subtle animation
+            star.style.transition = 'opacity 3s ease-in-out';
+            setInterval(() => {
+                star.style.opacity = Math.random();
+            }, 3000 + Math.random() * 2000);
+
+            starField.appendChild(star);
+        }
+
+        // Parallax-ish scroll effect for the star field
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            starField.style.transform = `translateY(${scrolled * 0.2}px)`;
+        });
+    </script>
+
+
+</body></html>

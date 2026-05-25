@@ -1,0 +1,293 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Inter:wght@300;400&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .star-field {
+            background: radial-gradient(circle at 2px 2px, rgba(196, 168, 130, 0.1) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#e5e2db",
+                        "surface": "#131410",
+                        "inverse-surface": "#e5e2db",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#a1d4af",
+                        "on-tertiary-fixed": "#00210f",
+                        "on-surface-variant": "#d0c5b8",
+                        "on-secondary": "#33285c",
+                        "surface-bright": "#3a3935",
+                        "inverse-on-surface": "#31312c",
+                        "on-secondary-container": "#bdb0ee",
+                        "inverse-primary": "#715b3a",
+                        "surface-container-highest": "#353530",
+                        "on-error": "#690005",
+                        "tertiary-container": "#86b895",
+                        "on-tertiary-container": "#19492e",
+                        "outline": "#998f84",
+                        "bg-secondary": "#111118",
+                        "tertiary-fixed-dim": "#9fd2ae",
+                        "background": "#131410",
+                        "on-tertiary": "#04381f",
+                        "tertiary-fixed": "#bbefc9",
+                        "secondary": "#ccbefd",
+                        "surface-container-high": "#2a2a26",
+                        "surface-container-low": "#1c1c18",
+                        "outline-variant": "#4d463c",
+                        "secondary-fixed": "#e7deff",
+                        "primary-fixed": "#fddeb5",
+                        "on-primary": "#3f2d11",
+                        "surface-container-lowest": "#0e0e0b",
+                        "bg-deep": "#0A0A0F",
+                        "surface-tint": "#e0c29a",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#281901",
+                        "on-primary-fixed-variant": "#584325",
+                        "error": "#ffb4ab",
+                        "border-subtle": "#252530",
+                        "on-secondary-fixed": "#1e1146",
+                        "bg-surface": "#1A1A24",
+                        "primary": "#e1c39b",
+                        "surface-dim": "#131410",
+                        "on-primary-container": "#513d1f",
+                        "on-tertiary-fixed-variant": "#205034",
+                        "secondary-container": "#4c4177",
+                        "secondary-fixed-dim": "#ccbefd",
+                        "primary-container": "#c4a882",
+                        "on-secondary-fixed-variant": "#4a3f74",
+                        "on-surface": "#e5e2db",
+                        "surface-container": "#20201c",
+                        "primary-fixed-dim": "#e0c29a",
+                        "text-muted": "#8A8799",
+                        "surface-variant": "#353530"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "card-padding": "32px",
+                        "section-gap": "120px",
+                        "margin-desktop": "80px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["JetBrains Mono"],
+                        "display-hero": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-mono": ["13px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                        "display-hero": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "300"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.7", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-bg-deep text-on-surface selection:bg-primary-container selection:text-on-primary-container star-field" style="background-position: 1.58594px 9.31976px;">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-nav">
+<div class="max-w-[1200px] mx-auto px-margin-desktop py-unit-6 flex justify-between items-center">
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors" href="#"><span style="color: rgb(208, 197, 184); font-family: &quot;JetBrains Mono&quot;; font-size: 13px; font-weight: 400; letter-spacing: 0.65px;">© Kavya R — Crafted with precision</span>Kavya R&nbsp;</a>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-label-mono text-label-mono text-primary relative after:content-['✦'] after:absolute after:-bottom-4 after:left-1/2 after:-translate-x-1/2 after:text-[10px] hover:text-primary transition-colors" href="#">Work</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#">Experience</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center text-primary font-bold text-2xl cursor-default select-none">
+                ക
+            </div>
+</div>
+</nav>
+<main class="max-w-[1200px] mx-auto px-margin-desktop pt-40 pb-section-gap">
+<!-- Hero / Heading Section -->
+<header class="mb-20">
+<div class="flex items-center gap-4 mb-4">
+<span class="text-primary">✦</span>
+<span class="font-label-mono text-label-mono text-primary-fixed uppercase tracking-widest">Portfolio Selection</span>
+</div>
+<h1 class="font-display-hero text-display-hero leading-none">PROJECTS</h1>
+</header>
+<!-- Filter Tabs -->
+<div class="flex flex-wrap gap-8 mb-24 border-b border-border-subtle pb-6">
+<button class="font-label-mono text-label-mono text-primary border-b-2 border-primary pb-6 -mb-[26px]">All</button>
+<button class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-all pb-6 -mb-[26px]">Full Stack</button>
+<button class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-all pb-6 -mb-[26px]">AI / ML</button>
+<button class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-all pb-6 -mb-[26px]">Personal</button>
+</div>
+<!-- Project Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Project 1: BrightMinds -->
+<div class="reveal group relative flex flex-col bg-bg-secondary border-t-4 border-primary-container p-card-padding transition-all duration-500 hover:bg-bg-surface overflow-hidden active">
+<div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-weight="fill">auto_awesome</span>
+</div>
+<div class="mb-8 overflow-hidden aspect-[4/3] bg-surface-container-lowest">
+<img alt="BrightMinds" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A futuristic AI visualization interface with glowing nodes and neural network patterns. The scene is set in a dark, atmospheric environment with a warm gold and amber glow radiating from the center. The style is cinematic digital art, clean and technical yet ethereal, symbolizing the advanced machine learning used in the BrightMinds learning application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5miBIpp-XquBYbNvFixU54cfexge2-IJx3FDXZ-Zoj3xJBCrx4py9WdHtyy1x-kW8mj7qOkOo03-dg6E05gZWXSb8V5gVtj3bijjuYvQVliNs15vBkrjUnNs2WmxVoC3UX1PeACpNiEq0nkTQqhvu3ru_7WJ3irq5QUrZAxYUNTBjE2tfTOCYj8fbRofJvAKaPXnixt4dZ3HECUjHNezZf_j396f-MMeMtuYfbbHJNB_UOvkf9fkt07JenP93OD1svO_k7YFyN04">
+</div>
+<div class="flex items-center gap-2 mb-4">
+<span class="font-label-mono text-[10px] uppercase tracking-tighter text-primary-fixed bg-on-primary-container/20 px-2 py-0.5">AI / ML</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface group-hover:text-primary transition-colors">BrightMinds</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow leading-relaxed">
+                    AI-powered learning app specifically designed for autistic children, leveraging Reinforcement Learning (RL) and Gemini for personalized educational pathways.
+                </p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="font-label-mono text-[11px] border border-outline-variant px-3 py-1 text-on-surface-variant group-hover:border-primary-container/40 transition-colors">Python</span>
+<span class="font-label-mono text-[11px] border border-outline-variant px-3 py-1 text-on-surface-variant group-hover:border-primary-container/40 transition-colors">React</span>
+<span class="font-label-mono text-[11px] border border-outline-variant px-3 py-1 text-on-surface-variant group-hover:border-primary-container/40 transition-colors">ML</span>
+<span class="font-label-mono text-[11px] border border-outline-variant px-3 py-1 text-on-surface-variant group-hover:border-primary-container/40 transition-colors">GenAI</span>
+</div>
+<a class="inline-flex items-center gap-2 text-primary font-label-mono text-label-mono group/link" href="#">
+                    View Project <span class="transition-transform group-hover/link:translate-x-1">→</span>
+</a>
+</div>
+<!-- Project 2: College Store Management -->
+<div class="reveal group relative flex flex-col bg-bg-secondary border-t-4 border-tertiary p-card-padding transition-all duration-500 hover:bg-bg-surface overflow-hidden active">
+<div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-weight="fill">shopping_cart</span>
+</div>
+<div class="mb-8 overflow-hidden aspect-[4/3] bg-surface-container-lowest">
+<img alt="College Store Management" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A modern and sleek e-commerce dashboard interface displayed on a tablet. The color palette features deep forest greens and subtle teal accents on a dark background. The scene has soft, diffuse lighting with a professional, minimalist aesthetic. The layout is clean and grid-based, emphasizing structural integrity and precision in full-stack development." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEJ0g6J1pA_rEL8GnXsbykaCHihy7n7AtcwOft-s6Wk3IFesbJZ0_-prhOXleZ9bkPPlHK6ZGkwkDvEuaOsVXTFpCokyZg7sr898enxywjNHxk5i44dZge6Efq_dGNtZa1cNToE_2eYTjExD4BtYABSwKKjC37__fJsaSP8ul5UmjaBdr5uuvRl00yaeiMzgF0t2mC1MH4KHRwxAx7CqMwEeoYEaj0K63KlVMEp07ot7Hfljt_UL9BmZOSNB7ex6R2kptYf27wWqM">
+</div>
+<div class="flex items-center gap-2 mb-4">
+<span class="font-label-mono text-[10px] uppercase tracking-tighter text-tertiary bg-tertiary-container/20 px-2 py-0.5">Full Stack</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface group-hover:text-tertiary transition-colors">College Store Management</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow leading-relaxed">
+                    A comprehensive e-commerce platform for educational institutions featuring secure Google OAuth, Razorpay integration, and intelligent content-based filtering.
+                </p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="font-label-mono text-[11px] border border-outline-variant px-3 py-1 text-on-surface-variant group-hover:border-tertiary/40 transition-colors">Node.js</span>
+<span class="font-label-mono text-[11px] border border-outline-variant px-3 py-1 text-on-surface-variant group-hover:border-tertiary/40 transition-colors">OAuth</span>
+<span class="font-label-mono text-[11px] border border-outline-variant px-3 py-1 text-on-surface-variant group-hover:border-tertiary/40 transition-colors">Payment</span>
+</div>
+<a class="inline-flex items-center gap-2 text-tertiary font-label-mono text-label-mono group/link" href="#">
+                    View Project <span class="transition-transform group-hover/link:translate-x-1">→</span>
+</a>
+</div>
+<!-- Project 3: FaceSketcher -->
+<div class="reveal group relative flex flex-col bg-bg-secondary border-t-4 border-primary-container p-card-padding transition-all duration-500 hover:bg-bg-surface overflow-hidden active">
+<div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-weight="fill">face_retouching_natural</span>
+</div>
+<div class="mb-8 overflow-hidden aspect-[4/3] bg-surface-container-lowest">
+<img alt="FaceSketcher" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Generative portrait sketch interface turning text prompts into stylized faces with neural rendering and warm cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV9N2aaxsSxJ8yXbttX87jHI2Vtoo9OrZtkklsxY4gkCiUFecMusPdYnsVW8UquP0tg2VhDxAGluJsuiWYkTifUiHLf4ViJb6hXG5NlabOrHBNVHL1kqT_J_xl_1g4a0vWtqbc-1NXNIeF01j32sVK_rq71HVdtAvU7HTlzURcSo5LKJw6pQ9yw7TKT8ey2QY4cn1ndb5-ydm7b7fGUBjpGDpBKcewI1-C8pqLTC6cRU18OjuTw4vn5cUxoY7XhGFkyNsf1z9Lckk">
+</div>
+<div class="flex items-center gap-2 mb-4">
+<span class="font-label-mono text-[10px] uppercase tracking-tighter text-primary-fixed bg-on-primary-container/20 px-2 py-0.5">AI / ML</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface group-hover:text-primary transition-colors">FaceSketcher: Turn words to faces</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow leading-relaxed">
+                    Generative portrait system that translates natural-language prompts into stylized facial sketches using deep learning pipelines and prompt-conditioned diffusion.
+                </p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="font-label-mono text-[11px] border border-outline-variant px-3 py-1 text-on-surface-variant group-hover:border-primary-container/40 transition-colors">Python</span>
+<span class="font-label-mono text-[11px] border border-outline-variant px-3 py-1 text-on-surface-variant group-hover:border-primary-container/40 transition-colors">PyTorch</span>
+<span class="font-label-mono text-[11px] border border-outline-variant px-3 py-1 text-on-surface-variant group-hover:border-primary-container/40 transition-colors">NLP</span>
+<span class="font-label-mono text-[11px] border border-outline-variant px-3 py-1 text-on-surface-variant group-hover:border-primary-container/40 transition-colors">Computer Vision</span>
+</div>
+<a class="inline-flex items-center gap-2 text-primary font-label-mono text-label-mono group/link" href="#">
+                    View Project <span class="transition-transform group-hover/link:translate-x-1">→</span>
+</a>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto border-t border-outline-variant bg-bg-deep">
+<div class="font-body-md text-body-md text-on-surface-variant font-label-mono text-label-mono mb-8 md:mb-0">
+            © Kavya R — Crafted with precision</div>
+<div class="flex gap-margin-desktop">
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary-fixed transition-all duration-200 hover:translate-y-[-2px]" href="#">LinkedIn</a>
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary-fixed transition-all duration-200 hover:translate-y-[-2px]" href="#">GitHub</a>
+<a class="text-on-surface-variant font-label-mono text-label-mono hover:text-primary-fixed transition-all duration-200 hover:translate-y-[-2px]" href="#">Instagram</a>
+</div>
+</footer>
+<script>
+        // Reveal on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Nav transformation on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-unit-4', 'bg-bg-deep/90');
+                nav.classList.remove('py-unit-6');
+            } else {
+                nav.classList.add('py-unit-6');
+                nav.classList.remove('py-unit-4', 'bg-bg-deep/90');
+            }
+        });
+
+        // Mouse trailing glow effect (Subtle)
+        document.addEventListener('mousemove', (e) => {
+            const starField = document.querySelector('.star-field');
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+            starField.style.backgroundPosition = `${x * 0.1}px ${y * 0.1}px`;
+        });
+    </script>
+
+
+
+
+</body></html>
