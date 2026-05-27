@@ -127,7 +127,7 @@ export function ExperiencePage() {
         <ToolsSection />
 
         <section id="certifications">
-          <h2 className="font-[family-name:var(--font-label-mono)] text-[13px] text-primary tracking-widest uppercase mb-12 text-center">
+          <h2 className="font-[family-name:var(--font-label-mono)] text-[13px] text-primary tracking-widest uppercase mb-12 text-center margin-top-20">
             Recognition & Certifications
           </h2>
           <div className="overflow-hidden border-y border-border-subtle py-10 bg-bg-secondary/50">

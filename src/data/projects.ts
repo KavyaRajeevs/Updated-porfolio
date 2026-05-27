@@ -39,7 +39,7 @@ export const projects: Project[] = [
     imageAlt: 'FaceSketcher generative portrait sketch interface',
     icon: 'face_retouching_natural',
     accent: 'primary',
-    href: 'https://github.com/KavyaRajeevs'
+    href: 'https://github.com/KavyaRajeevs/FACESKETCHER'
   },
   {
     id: 'college-store',

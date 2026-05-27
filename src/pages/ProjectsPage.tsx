@@ -10,8 +10,8 @@ const filters: Filter[] = ['All', 'Full Stack', 'AI / ML', 'Personal']
 function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   const isPrimary = project.accent === 'primary'
   const borderColor = isPrimary ? 'border-primary-container' : 'border-tertiary'
-  const tagColor = isPrimary ? 'text-primary-fixed' : 'text-tertiary'
-  const tagBg = isPrimary ? 'bg-on-primary-container/20' : 'bg-tertiary-container/20'
+  const tagColor = isPrimary ? 'text-primary' : 'text-tertiary'
+  const tagBg = isPrimary ? 'bg-tertiary-container/60' : 'bg-tertiary-container/40'
   const hoverTitle = isPrimary ? 'group-hover:text-primary' : 'group-hover:text-tertiary'
   const linkColor = isPrimary ? 'text-primary' : 'text-tertiary'
   const tagHover = isPrimary ? 'group-hover:border-primary-container/40' : 'group-hover:border-tertiary/40'
@@ -73,7 +73,7 @@ export function ProjectsPage() {
         <header className="mb-20">
           <div className="flex items-center gap-4 mb-4">
             <span className="text-primary">✦</span>
-            <span className="font-[family-name:var(--font-label-mono)] text-[13px] text-primary-fixed uppercase tracking-widest">
+            <span className="font-[family-name:var(--font-label-mono)] text-[13px] text-primary uppercase tracking-widest">
               Portfolio Selection
             </span>
           </div>

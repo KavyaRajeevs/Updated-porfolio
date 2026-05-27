@@ -24,7 +24,7 @@ export function ToolsSection() {
   {tools.map((tool) => (
     <li key={tool.id} className="flex justify-center items-center">
       <div
-        className="group w-[72px] h-[72px] md:w-20 md:h-20 flex items-center justify-center rounded-lg border border-border-subtle bg-bg-surface hover:border-primary/50 hover:shadow-[0_0_24px_rgba(196,168,130,0.08)] transition-all duration-300"
+                className="group w-[72px] h-[72px] md:w-20 md:h-20 flex items-center justify-center rounded-lg border border-border-subtle bg-bg-surface hover:border-primary/50 hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-sage-green)_20%,transparent)] transition-all duration-300"
         title={tool.name}
       >
         <span className="sr-only">{tool.name}</span>

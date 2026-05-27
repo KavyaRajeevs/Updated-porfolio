@@ -1,7 +1,7 @@
 import { socialLinks } from '../data/links'
 
 const linkClass =
-  'text-on-surface-variant font-label-mono text-label-mono hover:text-primary-fixed transition-all duration-200 hover:-translate-y-0.5'
+  'text-on-surface-variant font-label-mono text-label-mono hover:text-primary transition-all duration-200 hover:-translate-y-0.5'
 
 export function Footer() {
   return (

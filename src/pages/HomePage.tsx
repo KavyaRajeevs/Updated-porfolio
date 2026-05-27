@@ -27,12 +27,12 @@ export function HomePage() {
       <StarField count={100} />
       <main className="relative z-10">
         <section className="min-h-screen flex items-center pt-24 px-6 md:px-20 max-w-[1200px] mx-auto">
-          <div className="absolute top-1/2 right-[10%] w-[40vw] h-[40vw] bg-[radial-gradient(circle,rgba(196,168,130,0.1)_0%,transparent_70%)] blur-[60px] pointer-events-none" />
+          <div className="absolute top-1/2 right-[10%] w-[40vw] h-[40vw] bg-[radial-gradient(circle,color-mix(in_srgb,var(--color-sage-green)_18%,transparent)_0%,transparent_70%)] blur-[60px] pointer-events-none" />
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center w-full">
             <div className="md:col-span-7 z-20">
               <div className="flex items-center gap-3 mb-6">
                 <span className="h-px w-8 bg-primary" />
-                <span className="font-[family-name:var(--font-label-mono)] text-[13px] tracking-widest text-primary-container">
+                <span className="font-[family-name:var(--font-label-mono)] text-[13px] tracking-widest text-primary">
                   SOFTWARE ENGINEER · AI EXPLORER · DANCER
                 </span>
               </div>
@@ -40,13 +40,12 @@ export function HomePage() {
                 Hi, I&apos;m <span className="text-primary italic">Kavya.</span>
               </h1>
               <p className="text-[18px] leading-[1.7] font-light text-on-surface-variant max-w-xl mb-12">
-                I build full-stack apps and chase ideas at the intersection of code, intelligence, and design.
-                Crafting digital experiences with architectural precision and a storyteller&apos;s soul.
+                I build full-stack apps and chase ideas at the intersection of code and design with AI.
               </p>
               <div className="flex flex-wrap gap-6 mb-16">
                 <Link
                   to="/projects"
-                  className="px-8 py-4 border border-primary-container text-primary-container font-[family-name:var(--font-label-mono)] text-[13px] rounded-lg transition-all duration-400 hover:bg-primary-container/10 hover:shadow-[0_0_20px_rgba(196,168,130,0.15)] flex items-center gap-2 group"
+                  className="px-8 py-4 border border-primary text-primary font-[family-name:var(--font-label-mono)] text-[13px] rounded-lg transition-all duration-400 hover:bg-primary hover:text-on-primary hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-sage-green)_25%,transparent)] flex items-center gap-2 group"
                 >
                   VIEW PROJECTS
                   <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">
@@ -164,7 +163,7 @@ export function HomePage() {
           id="contact"
           className="py-section-gap px-6 md:px-20 max-w-[1200px] mx-auto border-t border-border-subtle relative overflow-hidden"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] pointer-events-none" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-sage-green/10 blur-[100px] pointer-events-none" />
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             <div className="md:col-span-5">
               <h2 className="font-[family-name:var(--font-display-hero)] text-[36px] md:text-[48px] font-bold text-on-surface mb-6 uppercase">
@@ -216,7 +215,7 @@ export function HomePage() {
                 </div>
                 <button
                   type="submit"
-                  className="px-12 py-4 border border-primary-container text-primary-container font-[family-name:var(--font-label-mono)] text-[13px] rounded-lg transition-all duration-400 hover:bg-primary-container/10 flex items-center gap-2 group"
+                  className="px-12 py-4 border border-primary text-primary font-[family-name:var(--font-label-mono)] text-[13px] rounded-lg transition-all duration-400 hover:bg-primary hover:text-on-primary flex items-center gap-2 group"
                 >
                   SEND MESSAGE
                   <span className="material-symbols-outlined text-[18px] group-hover:-translate-y-1 transition-transform">

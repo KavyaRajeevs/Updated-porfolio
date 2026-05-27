@@ -2,9 +2,8 @@ import { Layout } from '../components/Layout'
 import { StarField } from '../components/StarField'
 
 const interests = {
-  passion: ['Classical Dance', 'Astronomy', 'Wellness'],
-  tech: ['AI / LLMs', 'Agents', 'Full Stack'],
-  personal: ['Psychology', 'Kerala', 'Aesthetics'],
+  passion: ['Classical Dance',  'Wellness'],
+  tech: ['AI / LLMs', 'Agents', 'Full Stack', 'Design']
 }
 
 export function AboutPage() {
@@ -28,21 +27,17 @@ export function AboutPage() {
                 title: 'The Foundation',
                 body: (
                   <>
-                    As a Computer Science graduate poised to join the ranks at{' '}
-                    <span className="text-primary font-bold">UST Global</span>, my journey is rooted in the
+                    As a Computer Science graduate, my journey is rooted in the
                     meticulous logic of software engineering. I find beauty in clean code and the quiet hum of a
                     perfectly architected system.
                   </>
                 ),
               },
               {
-                title: 'Rhythm & Cosmos',
+                title: 'Get to know me',
                 body: (
                   <>
-                    Beyond the screen, my life moves to a different tempo. I am a practitioner of{' '}
-                    <span className="text-primary">Classical Dance</span>, an art form where every mudra is a
-                    precise calculation of emotion and movement. When the night falls, I turn my gaze upward—stargazing
-                    isn&apos;t just a hobby; it&apos;s a reminder of our scale within the cosmic architecture.
+                    Beyond the screen, my life revolves around dance, fitness and social wellbeing. I enjoy exploring new technologies and learning new skills. 
                   </>
                 ),
               },
@@ -50,7 +45,7 @@ export function AboutPage() {
                 title: 'The Horizon',
                 body: (
                   <>
-                    Currently, I am deep-diving into the ethereal world of{' '}
+                    Currently, I am deep-diving into the world of{' '}
                     <span className="text-tertiary">Large Language Models</span> and autonomous AI agents. I believe the
                     future of technology lies in tools that don&apos;t just process data, but understand the nuance of
                     human intent, blending technical precision with creative intuition.
@@ -80,7 +75,7 @@ export function AboutPage() {
                 {interests.passion.map((tag, i) => (
                   <div
                     key={tag}
-                    className={`px-6 py-2 rounded-full border border-primary text-primary font-[family-name:var(--font-label-mono)] text-[13px] hover:bg-primary hover:text-bg-deep transition-all duration-300 cursor-default ${i === 0 ? 'scale-110' : ''}`}
+                    className={`px-6 py-2 rounded-full border border-primary text-primary font-[family-name:var(--font-label-mono)] text-[13px] hover:bg-primary hover:text-on-primary transition-all duration-300 cursor-default ${i === 0 ? 'scale-110' : ''}`}
                   >
                     {tag}
                   </div>
@@ -88,19 +83,12 @@ export function AboutPage() {
                 {interests.tech.map((tag, i) => (
                   <div
                     key={tag}
-                    className={`px-5 py-2 rounded-full border border-tertiary/60 text-tertiary font-[family-name:var(--font-label-mono)] text-[13px] hover:bg-tertiary hover:text-bg-deep transition-all duration-300 cursor-default ${i === 0 ? 'py-3 px-8 -rotate-2' : ''}`}
+                    className={`px-5 py-2 rounded-full border border-tertiary/60 text-tertiary font-[family-name:var(--font-label-mono)] text-[13px] hover:bg-tertiary hover:text-on-primary transition-all duration-300 cursor-default ${i === 0 ? 'py-3 px-8 -rotate-2' : ''}`}
                   >
                     {tag}
                   </div>
                 ))}
-                {interests.personal.map((tag, i) => (
-                  <div
-                    key={tag}
-                    className={`px-6 py-2 rounded-full border border-secondary text-secondary font-[family-name:var(--font-label-mono)] text-[13px] hover:bg-secondary hover:text-bg-deep transition-all duration-300 cursor-default ${i === 0 ? 'rotate-3' : ''}`}
-                  >
-                    {tag}
-                  </div>
-                ))}
+                
               </div>
             </div>
           </div>

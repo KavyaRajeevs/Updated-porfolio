@@ -1,35 +1,54 @@
 @import "tailwindcss";
 
 @theme {
-  --color-on-background: #e5e2db;
-  --color-surface: #131410;
-  --color-bg-deep: #0a0a0f;
-  --color-bg-secondary: #111118;
-  --color-bg-surface: #1a1a24;
-  --color-background: #131410;
-  --color-primary: #e1c39b;
-  --color-primary-container: #c4a882;
-  --color-primary-fixed: #fddeb5;
-  --color-primary-fixed-dim: #e0c29a;
-  --color-on-primary: #3f2d11;
-  --color-on-primary-container: #513d1f;
-  --color-on-primary-fixed: #281901;
-  --color-tertiary: #a1d4af;
-  --color-tertiary-container: #86b895;
-  --color-tertiary-fixed-dim: #9fd2ae;
-  --color-on-tertiary-container: #19492e;
-  --color-secondary: #ccbefd;
-  --color-secondary-fixed-dim: #ccbefd;
-  --color-on-secondary-container: #bdb0ee;
-  --color-on-surface: #e5e2db;
-  --color-on-surface-variant: #d0c5b8;
-  --color-text-muted: #8a8799;
-  --color-outline: #998f84;
-  --color-outline-variant: #4d463c;
-  --color-border-subtle: #252530;
-  --color-surface-container-highest: #353530;
-  --color-surface-container-high: #2a2a26;
-  --color-surface-container-lowest: #0e0e0b;
+  /* Brand palette */
+  --color-hunter-green: #386641;
+  --color-sage-green: #6a994e;
+  --color-yellow-green: #a7c957;
+  --color-light-grey: #eef0ec;
+  --color-light-grey-muted: #dfe3d8;
+  --color-blushed-brick: #bc4749;
+
+  /* Surfaces — light grey technical base */
+  --color-on-background: #243b28;
+  --color-surface: #ffffff;
+  --color-bg-deep: #eef0ec;
+  --color-bg-secondary: #ffffff;
+  --color-bg-surface: #ffffff;
+  --color-background: #eef0ec;
+
+  /* Primary — hunter & sage */
+  --color-primary: #386641;
+  --color-primary-container: #6a994e;
+  --color-primary-fixed: #a7c957;
+  --color-primary-fixed-dim: #8fb34a;
+  --color-on-primary: #eef0ec;
+  --color-on-primary-container: #eef0ec;
+  --color-on-primary-fixed: #1e3324;
+
+  /* Tertiary — greens for tech / ML accents */
+  --color-tertiary: #6a994e;
+  --color-tertiary-container: #e2ead8;
+  --color-tertiary-fixed-dim: #a7c957;
+  --color-on-tertiary-container: #1e3324;
+
+  /* Secondary — blushed brick for contrast accents */
+  --color-secondary: #bc4749;
+  --color-secondary-fixed-dim: #d45c5e;
+  --color-on-secondary-container: #5c2425;
+
+  /* Text — WCAG-friendly on light grey */
+  --color-on-surface: #1e3324;
+  --color-on-surface-variant: #3d5240;
+  --color-text-muted: #5c7359;
+
+  /* Borders & containers */
+  --color-outline: #8a9a88;
+  --color-outline-variant: #c8cdc4;
+  --color-border-subtle: #dfe3d8;
+  --color-surface-container-highest: #dfe3d8;
+  --color-surface-container-high: #e8ebe6;
+  --color-surface-container-lowest: #eef0ec;
 
   --spacing-unit: 8px;
   --spacing-card-padding: 32px;
@@ -69,6 +88,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+::selection {
+  background-color: color-mix(in srgb, var(--color-sage-green) 35%, transparent);
+  color: var(--color-on-surface);
+}
+
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
 }
@@ -95,11 +119,11 @@ body {
 @keyframes twinkle {
   0%,
   100% {
-    opacity: 0.1;
+    opacity: 0.15;
     transform: scale(1);
   }
   50% {
-    opacity: 0.6;
+    opacity: 0.55;
     transform: scale(1.2);
   }
 }
@@ -113,14 +137,13 @@ body {
 }
 
 .timeline-line {
-  background: linear-gradient(to bottom, #c4a882 0%, #252530 100%);
+  background: linear-gradient(to bottom, var(--color-sage-green) 0%, var(--color-border-subtle) 100%);
 }
 
 .star-glow {
-  text-shadow: 0 0 15px rgba(196, 168, 130, 0.4);
+  text-shadow: 0 0 20px color-mix(in srgb, var(--color-yellow-green) 45%, transparent);
 }
 
-/* Decorative star layer (Home/About) — must not be used on scrollable page content */
 .star-field {
   position: fixed;
   inset: 0;
@@ -131,7 +154,7 @@ body {
 .page-dot-bg {
   background-image: radial-gradient(
     circle at 2px 2px,
-    rgba(196, 168, 130, 0.1) 1px,
+    color-mix(in srgb, var(--color-hunter-green) 14%, transparent) 1px,
     transparent 0
   );
   background-size: 40px 40px;
@@ -139,9 +162,9 @@ body {
 
 .star {
   position: absolute;
-  background: white;
+  background: var(--color-sage-green);
   border-radius: 50%;
-  opacity: 0.3;
+  opacity: 0.35;
   animation: twinkle var(--duration, 3s) infinite ease-in-out;
 }
 
@@ -161,6 +184,6 @@ body {
 }
 
 .skill-group:hover {
-  background-color: #111118;
+  background-color: var(--color-surface-container-high);
   transform: translateY(-4px);
 }

@@ -21,5 +21,5 @@ export const tools: ToolBrand[] = [
     Logo: ChatGptLogo,
   },
   { id: 'claude', name: 'Claude', hex: 'D97757', path: siAnthropic.path },
-  { id: 'cursor', name: 'Cursor', hex: 'E8E8E8', path: siCursor.path }
+  { id: 'cursor', name: 'Cursor', hex: '386641', path: siCursor.path },
 ]
