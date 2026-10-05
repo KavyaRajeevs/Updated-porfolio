@@ -30,10 +30,15 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
           src={project.image}
         />
       </div>
-      <div className="flex items-center gap-2 mb-2">
+      <div className="flex items-center gap-2 mb-2 flex-wrap">
         <span className={`font-[family-name:var(--font-label-mono)] text-[9px] uppercase tracking-tighter ${tagColor} ${tagBg} px-1.5 py-0.5`}>
           {project.category}
         </span>
+        {project.personal && (
+          <span className="font-[family-name:var(--font-label-mono)] text-[9px] uppercase tracking-tighter text-on-surface-variant bg-surface-container-highest px-1.5 py-0.5">
+            Personal
+          </span>
+        )}
       </div>
       <h3 className={`font-[family-name:var(--font-headline-md)] text-[22px] font-bold mb-2 text-on-surface ${hoverTitle} transition-colors leading-tight`}>
         {project.title}
@@ -61,7 +66,7 @@ export function ProjectsPage() {
 
   const filtered = useMemo(() => {
     if (filter === 'All') return projects
-    if (filter === 'Personal') return []
+    if (filter === 'Personal') return projects.filter((p) => p.personal)
     return projects.filter((p) => p.category === filter)
   }, [filter])
 
@@ -101,21 +106,6 @@ export function ProjectsPage() {
           {filtered.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
-          {filter === 'Personal' && (
-            <div className="reveal active group relative flex flex-col items-center justify-center bg-transparent border-2 border-dashed border-outline-variant p-5 min-h-[280px] opacity-60">
-              <div className="text-center">
-                <span className="material-symbols-outlined text-primary text-4xl mb-4 block animate-float">
-                  nights_stay
-                </span>
-                <p className="font-[family-name:var(--font-headline-md)] text-[22px] font-bold mb-1 italic">
-                  Something is brewing...
-                </p>
-                <p className="font-[family-name:var(--font-label-mono)] text-[11px] text-on-surface-variant tracking-widest">
-                  EST. 2024
-                </p>
-              </div>
-            </div>
-          )}
         </div>
       </main>
     </Layout>

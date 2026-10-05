@@ -3,7 +3,8 @@ export type ProjectCategory = 'AI / ML' | 'Full Stack' | 'Personal'
 export interface Project {
   id: string
   title: string
-  category: ProjectCategory
+  category: Exclude<ProjectCategory, 'Personal'>
+  personal?: boolean
   description: string
   tags: string[]
   image: string
@@ -14,6 +15,20 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 'resumerag',
+    title: 'ResumeRag',
+    category: 'AI / ML',
+    personal: true,
+    description:
+      'Multimodal RAG system for resumes that ingests documents, retrieves across text and visual context, and answers hiring questions with grounded citations.',
+    tags: ['Python', 'RAG', 'Multimodal', 'FastAPI'],
+    image: '/ResumeRag.png',
+    imageAlt: 'ResumeRag multimodal resume retrieval interface',
+    icon: 'document_search',
+    accent: 'primary',
+    href: 'https://github.com/KavyaRajeevs/rag-api',
+  },
   {
     id: 'brightminds',
     title: 'BrightMinds',

@@ -128,16 +128,16 @@ export function HomePage() {
                   Latest Project
                 </h3>
                 <p className="text-on-surface-variant max-w-md">
-                  FaceSketcher — turn natural language into stylized portrait sketches with generative AI.
+                  ResumeRag — multimodal RAG for resumes that retrieves across text and visual context.
                 </p>
               </div>
               <div className="mt-8 flex justify-between items-end">
                 <div className="flex gap-2">
                   <span className="px-3 py-1 bg-surface-container-high rounded text-[11px] font-[family-name:var(--font-label-mono)] text-tertiary">
-                    PYTHON
+                    RAG
                   </span>
                   <span className="px-3 py-1 bg-surface-container-high rounded text-[11px] font-[family-name:var(--font-label-mono)] text-tertiary">
-                    PYTORCH
+                    MULTIMODAL
                   </span>
                 </div>
                 <Link to="/projects" className="material-symbols-outlined text-primary-container group-hover:translate-x-2 transition-transform">

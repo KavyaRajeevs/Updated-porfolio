@@ -54,8 +54,35 @@ export function ExperiencePage() {
               </div>
               <div className="bg-bg-secondary p-card-padding border border-border-subtle rounded-lg hover:border-primary/30 transition-all duration-300">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
-                  <h3 className="font-[family-name:var(--font-headline-md)] text-[32px] font-bold">NeST Digital</h3>
+                  <h3 className="font-[family-name:var(--font-headline-md)] text-[32px] font-bold">EWB Edu Tech</h3>
                   <span className="font-[family-name:var(--font-label-mono)] text-[13px] text-primary px-3 py-1 border border-primary/20 rounded-full">
+                    AWS Cloud Computing Intern
+                  </span>
+                </div>
+                <p className="text-on-surface-variant mb-6 text-[18px] leading-[1.7] font-light">
+                  Hands-on AWS cloud work with EC2 and S3 — provisioning compute, storing and serving assets, and
+                  applying core cloud practices in a production-minded setup.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {['AWS', 'EC2', 'S3'].map((tag) => (
+                    <span
+                      key={tag}
+                      className="font-[family-name:var(--font-label-mono)] text-[11px] bg-surface-container-highest px-2 py-1 rounded text-on-surface-variant"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="relative mb-16">
+              <div className="absolute -left-[37px] top-1 w-4 h-4 bg-background border border-outline-variant rounded-full flex items-center justify-center">
+                <div className="w-1.5 h-1.5 bg-outline-variant rounded-full" />
+              </div>
+              <div className="bg-bg-secondary p-card-padding border border-border-subtle border-dashed rounded-lg grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                  <h3 className="font-[family-name:var(--font-headline-md)] text-[32px] font-bold">NeST Digital</h3>
+                  <span className="font-[family-name:var(--font-label-mono)] text-[13px] text-on-surface-variant px-3 py-1 border border-outline-variant rounded-full">
                     Developer Intern
                   </span>
                 </div>
@@ -115,10 +142,10 @@ export function ExperiencePage() {
             </div>
             <div className="skill-group border border-border-subtle p-card-padding rounded-lg">
               <SkillBlock icon="dns" title="Backend" tags={['Node.js', 'Express', 'PostgreSQL', 'MongoDB']} />
-              <SkillBlock icon="psychology" title="AI / ML" tags={['PyTorch', 'TensorFlow', 'Scikit-learn']} className="mt-10" />
+              <SkillBlock icon="psychology" title="AI / ML" tags={['PyTorch', 'TensorFlow', 'Ollama']} className="mt-10" />
             </div>
             <div className="skill-group border border-border-subtle p-card-padding rounded-lg">
-              <SkillBlock icon="cloud" title="Cloud" tags={['GCP', 'Oracle OCI', 'Firebase']} />
+              <SkillBlock icon="cloud" title="Cloud" tags={['AWS', 'Oracle OCI', 'Firebase']} />
               <SkillBlock icon="construction" title="Tools" tags={['Git / GitHub', 'Postman', 'Docker', 'Figma']} className="mt-10" />
             </div>
           </div>
